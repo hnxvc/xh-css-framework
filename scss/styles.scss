@@ -42,6 +42,12 @@
 
 @import 'components/tables/tables.scss';
 
+@import 'components/page-header/page-header';
+
+@import 'components/page-section/page-section';
+
+@import 'components/navigation/menu';
+
 // Pages
 @import 'pages/home';
 @import 'pages/about';
