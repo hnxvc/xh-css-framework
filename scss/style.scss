@@ -13,13 +13,11 @@
 @import 'general/base.scss';
 @import 'general/typoraphy';
 
+// Layout
+
+
 // Components
 @import 'components/post';
-
-// Layout
-@import 'layout/header';
-@import 'layout/footer';
-@import 'layout/sidebar';
 
 // Pages
 @import 'pages/home';
