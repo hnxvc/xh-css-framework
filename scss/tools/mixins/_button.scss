@@ -116,3 +116,38 @@
     box-shadow: none;
   }
 }
+
+
+// Outline color generator for btn-outline to make the hover state inverse the text and bg colors.
+@mixin btn-outline($text-color: $text-blue, $bg-color: $bg-white) {
+  color: $text-color;
+  background-color: $bg-color;
+  background-image: none;
+
+  &:hover,
+  &:active,
+  &.selected {
+    color: $bg-color;
+    background-color: $text-color;
+    background-image: none;
+    border-color: $text-color;
+
+    .Counter {
+      color: $text-color;
+      background-color: $bg-color;
+    }
+  }
+
+  &:focus {
+    border-color: $text-color;
+    box-shadow: 0 0 0 0.2em rgba($text-color, 0.3);
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $black-fade-30;
+    background-color: $bg-white;
+    border-color: $black-fade-15;
+    box-shadow: none;
+  }
+}
