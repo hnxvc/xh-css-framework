@@ -4,11 +4,11 @@ $font-family-text    :  'Lato', sans-serif !default;
 $font-family-heading : 'Montserrat', sans-serif !default;
 
 // Font weights
-$font-light     : 300 !default;
-$font-regular   : 400 !default;
-$font-medium    : 500 !default;
-$font-semi-bold : 600 !default;
-$font-bold      : 700 !default;
+$font-weight-light     : 300 !default;
+$font-weight-regular   : 400 !default;
+$font-weight-medium    : 500 !default;
+$font-weight-semi-bold : 600 !default;
+$font-weight-bold      : 700 !default;
 
 // Sizes
 $font-size-small     : 12px !default;
@@ -18,3 +18,5 @@ $font-size-x-large   : 32px !default;
 $font-size-xx-large  : 48px !default;
 $font-size-xxx-large : 64px !default;
 $font-size-xxxx-large: 96px !default;
+
+$body-font-size: $font-size-regular;
