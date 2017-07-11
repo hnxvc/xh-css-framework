@@ -2,12 +2,15 @@
 // Setting
 @import 'settings/color';
 @import 'settings/fonts';
+@import 'settings/misc';
 @import 'settings/z-index';
 
 // Tools
 
 @import 'tools/functions';
-@import 'tools/mixins';
+@import 'tools/mixins/button';
+@import 'tools/mixins/behavior';
+@import 'tools/mixins/media-query';
 
 // General
 @import 'general/font-face';
