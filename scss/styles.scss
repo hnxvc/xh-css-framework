@@ -13,13 +13,16 @@
 @import 'tools/mixins/behavior';
 @import 'tools/mixins/media-query';
 @import 'tools/mixins/layout';
+@import 'tools/mixins/typography';
 
 // General
 @import 'general/font-face';
-@import 'general/base.scss';
+@import 'general/base';
+@import 'general/normalize';
 @import 'general/typography';
 
 // Layout
+
 
 // Components
 @import 'components/buttons/button-group';
