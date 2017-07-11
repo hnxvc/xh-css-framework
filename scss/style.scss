@@ -1,7 +1,7 @@
 // Setting
-@import 'setting/color';
-@import 'setting/fonts';
-@import 'setting/z-index';
+@import 'settings/color';
+@import 'settings/fonts';
+@import 'settings/z-index';
 
 // Tools
 
@@ -11,13 +11,12 @@
 // General
 @import 'general/font-face';
 @import 'general/base.scss';
-@import 'general/typoraphy';
+@import 'general/typography';
 
 // Layout
 
 
 // Components
-@import 'components/post';
 
 // Pages
 @import 'pages/home';
