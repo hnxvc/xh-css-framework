@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass functions.
+// -----------------------------------------------------------------------------
+
+@function percent($width,$total){
+  @return ($width / $total ) * 100%;
+}
+
+@function asset($base, $type, $path) {
+  @return url($base + $type + $path);
+}
+
+
+@function image($path, $base: $base-url) {
+  @return asset($base, 'images/', $path);
+}
+
+
+@function font($path, $base: $base-url) {
+  @return asset($base, 'fonts/', $path);
+}

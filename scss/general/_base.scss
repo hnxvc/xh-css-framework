@@ -1,0 +1,14 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
