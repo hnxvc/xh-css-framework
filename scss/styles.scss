@@ -4,6 +4,7 @@
 @import 'settings/fonts';
 @import 'settings/misc';
 @import 'settings/z-index';
+@import 'settings/layout';
 
 // Tools
 
@@ -11,6 +12,7 @@
 @import 'tools/mixins/button';
 @import 'tools/mixins/behavior';
 @import 'tools/mixins/media-query';
+@import 'tools/mixins/layout';
 
 // General
 @import 'general/font-face';
@@ -20,7 +22,16 @@
 // Layout
 
 // Components
+@import 'components/buttons/button-group';
 @import 'components/buttons/button';
+
+@import 'components/forms/form-control';
+@import 'components/forms/form-select';
+@import 'components/forms/form-group';
+@import 'components/forms/form-validation';
+
+
+
 // Pages
 @import 'pages/home';
 @import 'pages/about';
