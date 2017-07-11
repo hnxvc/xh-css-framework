@@ -66,6 +66,6 @@ gulp.task('serve', ['default'], function() {
 
   gulp.watch(config.base + '*.html').on('change', $.browserSync.reload);
   gulp.watch(config.scss, ['styles']);
-  gulp.watch(config.base + 'assets/css/main.min.css').on('change', $.browserSync.reload);
+  gulp.watch(config.base + '/build/css/styles.min.css').on('change', $.browserSync.reload);
 
 });
