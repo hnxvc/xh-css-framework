@@ -12,18 +12,9 @@
   vertical-align: middle;
   cursor: pointer;
   user-select: none;
-  background-repeat: repeat-x;
-  background-position: -1px -1px;
-  background-size: 110% 110%;
   border: 1px solid transparentize($black, 0.8);
   border-radius: 0.25em;
   appearance: none; // Corrects inability to style clickable `input` types in iOS.
-
-  i {
-    font-style: normal;
-    font-weight: 500;
-    opacity: 0.6;
-  }
 
   &:hover {
     text-decoration: none;
@@ -37,12 +28,10 @@
   &:disabled,
   &--disabled {
     cursor: default;
-    // Repeat `background-position` because `:hover`
-    background-position: 0 0;
   }
 
   &:active,
-  &.selected {
+  &--selected {
     background-image: none;
   }
 }

@@ -15,20 +15,21 @@
     When using a button element, always specify a type. When using a <a> element, always add role="button" for accessibility.
   </p>
 
+
   <button class="btn" type="button">Button button</button>
   <a class="btn" href="#" role="button">Link button</a>
 
+  <button class="btn" type="button">Button</button>
+  <button class="btn btn--sm" type="button">Small button</button>
+
   <h2>Button primary</h2>
-  <button class="btn btn--primary" type="button">Button primary</button>
-  <a class="btn btn--primary" href="#" role="button">Link primary</a>
+
+  <button class="btn btn--primary" type="button">Primary button</button>
+  <button class="btn btn--sm btn--primary" type="button">Small primary button</button>
 
   <h2>Button danger</h2>
-  <button class="btn btn--danger" type="button">Button danger</button>
-  <a class="btn btn--danger" href="#" role="button">Link danger</a>
-
-  <h2>Button disabled</h2>
-  <button class="btn btn--primary btn--disabled" type="button" disabled>Button disabled</button>
-  <a class="btn btn--disabled" href="#" role="button">Link disabled</a>
+  <button class="btn btn--danger" type="button">Danger button</button>
+  <button class="btn btn--sm btn-danger" type="button">Small danger button</button>
 
   <h2>Button small</h2>
   <button class="btn btn--sm" type="button">Button small</button>
@@ -45,5 +46,22 @@
   <h2>Outline</h2>
   <button class="btn btn--outline" type="button">Outline button</button>
   <button class="btn btn--sm btn--outline" type="button">Outline button</button>
+
+
+  <h2>Button disabled</h2>
+  <button class="btn" type="button" disabled>Disabled button</button>
+  <a class="btn btn--disabled" href="#" role="button">Disabled button</a>
+
+  <br>
+  <button class="btn btn--primary" type="button" disabled>Disabled button</button>
+  <a class="btn btn--primary btn--disabled" href="#" role="button">Disabled button</a>
+
+  <br>
+  <button class="btn btn--danger" type="button" disabled>Disabled button</button>
+  <a class="btn btn--danger btn--disabled" href="#" role="button">Disabled button</a>
+  <br>
+  <button class="btn btn--outline" type="button" disabled>Disabled button</button>
+  <a class="btn btn--outline btn--disabled" href="#" role="button">Disabled button</a>
+
 </body>
 </html>
