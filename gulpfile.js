@@ -59,12 +59,13 @@ gulp.task('serve', ['default'], function() {
 
   $.browserSync({
     server: {
-      baseDir: config.base,
+      baseDir: config.base
       // index: "index.html",
     }
   });
 
   gulp.watch(config.base + '*.html').on('change', $.browserSync.reload);
+  gulp.watch(config.base + 'demo/*.html').on('change', $.browserSync.reload);
   gulp.watch(config.scss, ['styles']);
   gulp.watch(config.base + '/build/css/styles.min.css').on('change', $.browserSync.reload);
 
