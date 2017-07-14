@@ -5,7 +5,7 @@
 // This is the tooltip bubble
 .tooltipped::after {
   position: absolute;
-  z-index: 1000000;
+  z-index: $z-index-5--tooltip;
   display: none;
   padding: 5px 8px;
   font: normal normal 11px/1.5 $body-font;
@@ -28,7 +28,7 @@
 // This is the tooltip arrow
 .tooltipped::before {
   position: absolute;
-  z-index: 1000001;
+  z-index: $z-index-5--tooltip;
   display: none;
   width: 0;
   height: 0;
@@ -51,43 +51,42 @@
 }
 
 // This will indicate when we'll activate the tooltip
-.tooltipped:hover,
-.tooltipped:active,
-.tooltipped:focus {
-  &::before,
-  &::after {
-    display: inline-block;
-    text-decoration: none;
-    animation-name: tooltip-appear;
-    animation-duration: $tooltip-duration;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in;
-    animation-delay: $tooltip-delay;
+.tooltipped {
+  @include on-event {
+    &::before,
+    &::after {
+      display: inline-block;
+      text-decoration: none;
+      animation-name: tooltip-appear;
+      animation-duration: $tooltip-duration;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in;
+      animation-delay: $tooltip-delay;
+    }
   }
 }
 
-.tooltipped-no-delay:hover,
-.tooltipped-no-delay:active,
-.tooltipped-no-delay:focus {
-  &::before,
-  &::after {
-    opacity: 1;
-    animation: none;
+.tooltipped--no-delay {
+  @include on-event {
+    &::before,
+    &::after {
+      opacity: 1;
+      animation: none;
+    }
   }
 }
 
-.tooltipped-multiline:hover,
-.tooltipped-multiline:active,
-.tooltipped-multiline:focus {
-  &::after {
-    display: table-cell;
+.tooltipped--multiline {
+  @include on-event {
+    &::after {
+      display: table-cell;
+    }
   }
 }
 
-// Tooltipped south
-.tooltipped-s,
-.tooltipped-se,
-.tooltipped-sw {
+.tooltipped--bottom,
+.tooltipped--bottom-right,
+.tooltipped--bottom-left {
   &::after {
     top: 100%;
     right: 50%;
@@ -103,7 +102,7 @@
   }
 }
 
-.tooltipped-se {
+.tooltipped--bottom-right {
   &::after {
     right: auto;
     left: 50%;
@@ -111,14 +110,14 @@
   }
 }
 
-.tooltipped-sw::after {
+.tooltipped--bottom-left::after {
   margin-right: -15px;
 }
 
 // Tooltips above the object
-.tooltipped-n,
-.tooltipped-ne,
-.tooltipped-nw {
+.tooltipped--top,
+.tooltipped--top-right,
+.tooltipped--top-left {
   &::after {
     right: 50%;
     bottom: 100%;
@@ -134,7 +133,7 @@
   }
 }
 
-.tooltipped-ne {
+.tooltipped--top-right {
   &::after {
     right: auto;
     left: 50%;
@@ -142,18 +141,17 @@
   }
 }
 
-.tooltipped-nw::after {
+.tooltipped--top-left::after {
   margin-right: -15px;
 }
 
 // Move the tooltip body to the center of the object.
-.tooltipped-s::after,
-.tooltipped-n::after {
+.tooltipped--bottom::after,
+.tooltipped--top::after {
   transform: translateX(50%);
 }
 
-// Tooltipped to the left
-.tooltipped-w {
+.tooltipped--left {
   &::after {
     right: 100%;
     bottom: 50%;
@@ -170,8 +168,7 @@
   }
 }
 
-// tooltipped to the right
-.tooltipped-e {
+.tooltipped--right {
   &::after {
     bottom: 50%;
     left: 100%;
@@ -191,9 +188,9 @@
 // Multiline tooltips
 //
 // `.tooltipped-multiline` Add this class when you have long content.
-// The downside is you cannot preformat the text with newlines and `[w,e]`
+// The downside is you cannot preformat the text with newlines and `[left, right]`
 // are always `$tooltip-max-width` wide.
-.tooltipped-multiline {
+.tooltipped--multiline {
   &::after {
     width: max-content;
     max-width: $tooltip-max-width;
@@ -202,22 +199,22 @@
     border-collapse: separate;
   }
 
-  &.tooltipped-s::after,
-  &.tooltipped-n::after {
+  &.tooltipped--bottom::after,
+  &.tooltipped--top::after {
     right: auto;
     left: 50%;
     transform: translateX(-50%);
   }
 
-  &.tooltipped-w::after,
-  &.tooltipped-e::after {
+  &.tooltipped--left::after,
+  &.tooltipped--right::after {
     right: 100%;
   }
 }
 
 @media screen and (min-width: 0\0) {
   // IE11
-  .tooltipped-multiline::after {
+  .tooltipped--multiline::after {
     width: $tooltip-max-width;
   }
 }
@@ -225,55 +222,29 @@
 // Sticky tooltips
 //
 // Always show the tooltip.
-.tooltipped-sticky {
+.tooltipped--sticky {
+  @include on-event() {
+    &::before,
+    &::after {
+      animation: none;
+    }
+  }
+
   &::before,
   &::after {
     display: inline-block;
+    opacity: 1;
   }
 
-  &.tooltipped-multiline {
+  &.tooltipped--multiline {
     &::after {
       display: table-cell;
     }
   }
 }
 
-// Alert tooltips
-//
-// Colors for different alert states.
-@mixin colorizeTooltip($text-color, $background-color) {
-  &::after {
-    color: $text-color;
-    background: $background-color;
-  }
-
-  &.tooltipped-s,
-  &.tooltipped-se,
-  &.tooltipped-sw {
-    &::before {
-      border-bottom-color: $background-color;
-    }
-  }
-
-  &.tooltipped-n,
-  &.tooltipped-ne,
-  &.tooltipped-nw {
-    &::before {
-      border-top-color: $background-color;
-    }
-  }
-
-  &.tooltipped-e::before {
-    border-right-color: $background-color;
-  }
-
-  &.tooltipped-w::before {
-    border-left-color: $background-color;
-  }
-}
-
 @include retina-media-query {
-  .tooltipped-w::after {
+  .tooltipped--left::after {
     // weird bug on retina
     margin-right: 4.5px;
   }

@@ -1,0 +1,33 @@
+// Alert tooltips
+//
+// Colors for different alert states.
+@mixin colorizeTooltip($text-color, $background-color) {
+  &::after {
+    color: $text-color;
+    background: $background-color;
+  }
+
+  &.tooltipped--bottom,
+  &.tooltipped--bottom-right,
+  &.tooltipped--bottom-left {
+    &::before {
+      border-bottom-color: $background-color;
+    }
+  }
+
+  &.tooltipped--top,
+  &.tooltipped--top-right,
+  &.tooltipped--top-left {
+    &::before {
+      border-top-color: $background-color;
+    }
+  }
+
+  &.tooltipped--right::before {
+    border-right-color: $background-color;
+  }
+
+  &.tooltipped--left::before {
+    border-left-color: $background-color;
+  }
+}
