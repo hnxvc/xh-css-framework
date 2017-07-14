@@ -27,3 +27,18 @@ $tooltip-duration: 0.1s !default;
 $form-control-shadow: inset 0 1px 2px rgba($black, 0.075);
 $btn-input-focus-shadow: 0 0 0 0.2em rgba($blue, 0.3);
 $btn-active-shadow: inset 0 0.15em 0.3em $black-fade-15;
+
+// Table
+$table-cell-padding:            8px !default;
+// Padding for cells in `.table--condensed`.
+$table-condensed-cell-padding:  5px !default;
+// Default background color used for all tables.
+$table-bg:                      transparent !default;
+// Background color used for `.table-striped`.
+$table-bg-accent:               $gray-200 !default;
+// Background color used for `.table-hover`.
+$table-bg-hover:                $gray-200 !default;
+$table-bg-active:               $table-bg-hover !default;
+
+// Border color for table and cell borders.
+$table-border-color:            $border-gray-dark !default;
