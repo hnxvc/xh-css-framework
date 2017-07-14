@@ -1,5 +1,4 @@
 // Miscellaneous variables
-// stylelint-disable declaration-bang-space-before
 
 // Border size
 $border-width: 1px !default;
@@ -23,16 +22,6 @@ $tooltip-background-color: rgba($black, 0.8) !default;
 $tooltip-text-color: $white !default;
 $tooltip-delay: 0.4s !default;
 $tooltip-duration: 0.1s !default;
-
-// Should be moved into custom github css
-$stats-switcher-py: 10px;
-// Future proof this `height` value by finding the computed line-height, then
-// adding the total value of the vertical padding. This var is used to toggle
-// between the stats bar and language breakdown.
-$stats-viewport-height: ($body-font-size * $body-line-height) + ($stats-switcher-py * 2);
-
-$min_tab_size: 1;
-$max_tab_size: 12;
 
 // Button and form variables
 $form-control-shadow: inset 0 1px 2px rgba($black, 0.075);
