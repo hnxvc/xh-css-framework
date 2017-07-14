@@ -9,6 +9,7 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 0;
+  font-weight: $font-weight-bold;
 }
 
 h1 { @include h1; }
@@ -73,13 +74,4 @@ pre {
   margin-top: 0;
   margin-bottom: 0;
   font: 12px $mono-font;
-}
-
-// Octicons
-// --------------------------------------------------
-
-// Move this over here as a temporary override to the octicons source repo
-// instead of updating that upstream.
-.octicon {
-  vertical-align: text-bottom;
 }
