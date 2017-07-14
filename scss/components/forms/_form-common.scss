@@ -1,11 +1,12 @@
 .form-actions {
-  @include clearfix;
+  margin-top: 15px;
+  margin-bottom: 15px;
 
-  .btn {
-    float: right;
+  &--right {
+    text-align: right;
+  }
 
-    + .btn {
-      margin-right: 5px;
-    }
+  &--center {
+    text-align: center;
   }
 }
