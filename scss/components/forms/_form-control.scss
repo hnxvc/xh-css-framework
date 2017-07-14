@@ -1,6 +1,3 @@
-// Needs refactoring
-// stylelint-disable selector-no-qualifying-type, selector-max-compound-selectors
-// stylelint-disable selector-no-type
 // Base form controls
 //
 // Overrides for common inputs for easier styling.
@@ -31,7 +28,7 @@ label {
   outline: none;
   box-shadow: $form-control-shadow;
 
-  &.focus,
+  &--focus,
   &:focus {
     border-color: $blue-400;
     outline: none;
@@ -39,136 +36,69 @@ label {
   }
 }
 
-// Inputs with contrast for easy light gray backgrounds against white.
-.input--contrast {
-  background-color: $bg-gray-light;
-
-  &:focus { background-color: $bg-white; }
-}
-
 // Custom styling for HTML5 validation bubbles (WebKit only)
 ::placeholder {
   color: $text-gray-light;
 }
 
-// Mini inputs, to match .minibutton
-.input--sm {
-  min-height: 28px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  font-size: $font-size-small;
-  line-height: 20px;
-}
+.form-control {
+  &--contrast {
+    background-color: $bg-gray-light;
 
-// Large inputs
-.input--lg {
-  padding: 4px 10px;
-  font-size: 16px;
-}
-
-// Full-width inputs
-.input--block {
-  display: block;
-  width: 100%;
-}
-
-// Inputs with monospace text
-.input--monospace {
-  font-family: $mono-font;
-}
-
-// Hide the icon that tries to autofill contact info in webkit
-.input-hide-webkit-autofill {
-  &::-webkit-contacts-auto-fill-button {
-    position: absolute;
-    right: 0;
-    display: none !important;
-    pointer-events: none;
-    visibility: hidden;
-  }
-}
-
-// Checkboxes and Radiobuttons
-//
-// For checkboxes and radio button selections.
-.form-checkbox {
-  padding-left: 20px;
-  margin: 15px 0;
-  vertical-align: middle;
-
-  label {
-    em.highlight {
-      position: relative;
-      left: -4px;
-      padding: 2px 4px;
-      font-style: normal;
-      background: $yellow-100;
-      border-radius: 3px;
+    &:focus {
+      background-color: $bg-white;
     }
   }
 
-  input[type=checkbox],
-  input[type=radio] {
-    float: left;
-    margin: 5px 0 0 -20px;
-    vertical-align: middle;
+  &--monospace {
+    font-family: $mono-font;
   }
 
-  .note {
+  // Hide the icon that tries to autofill contact info in webkit
+  &--hide-webkit-autofill {
+    &::-webkit-contacts-auto-fill-button {
+      position: absolute;
+      right: 0;
+      display: none !important;
+      pointer-events: none;
+      visibility: hidden;
+    }
+  }
+}
+
+// form-control size
+.form-control {
+  &--sm {
+    min-height: 28px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: $font-size-small;
+    line-height: 20px;
+  }
+
+  &--lg {
+    padding: 4px 10px;
+    font-size: 16px;
+  }
+
+  &--block {
     display: block;
-    margin: 0;
-    font-size: 12px;
-    font-weight: normal;
-    color: $gray-600;
+    width: 100%;
   }
 }
 
-.form-checkbox-details {
-  display: none;
-}
+// Textarea
+textarea.form-control {
+  width: 100%;
+  height: 200px;
+  min-height: 200px;
 
-.form-checkbox-details-trigger {
-  &:checked {
-    ~ * .form-checkbox-details, // child of sibling
-    ~ .form-checkbox-details { // or sibling
-      display: block;
-    }
+  &--short {
+    height: 50px;
+    min-height: 50px;
   }
 }
 
-// Field groups
-//
-// Wrap field groups in `<div.hfields>` to lay them out horizontally - great for
-// the top of pages with autosave.
-.hfields {
-  margin: 15px 0;
-  @include clearfix;
-
-  .form-group {
-    float: left;
-    margin: 0 30px 0 0;
-
-    dt {
-      label {
-        display: inline-block;
-        margin: 5px 0 0;
-        color: $gray-600;
-      }
-
-      img {
-        position: relative;
-        top: -2px;
-      }
-    }
-  }
-
-  .btn {
-    float: left;
-    margin: 28px 25px 0 -20px;
-  }
-
-  .form-select { margin-top: 5px; }
-}
 
 // Hide the up/down buttons in <input type="number"> in the login form, the
 // input is used for two-factor auth codes, type="number" makes it more usable
@@ -177,35 +107,4 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   margin: 0;
   appearance: none;
-}
-
-// Input groups
-
-.form-actions {
-  @include clearfix;
-
-  .btn {
-    float: right;
-
-    + .btn {
-      margin-right: 5px;
-    }
-  }
-}
-
-.form-warning {
-  padding: 8px 10px;
-  margin: 10px 0;
-  font-size: 14px;
-  color: $yellow-900;
-  background: $yellow-100;
-  border: 1px solid $border-yellow;
-  border-radius: 3px;
-
-  p {
-    margin: 0;
-    line-height: 1.5;
-  }
-
-  a { font-weight: $font-weight-bold; }
 }

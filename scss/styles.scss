@@ -30,8 +30,10 @@
 @import 'components/buttons/button';
 @import 'components/buttons/button-group';
 
+@import 'components/forms/form-common';
 @import 'components/forms/form-control';
 @import 'components/forms/form-select';
+@import 'components/forms/form-checkbox';
 @import 'components/forms/form-group';
 @import 'components/forms/form-validation';
 
@@ -46,7 +48,3 @@
 @import 'components/page-section/page-section';
 
 @import 'components/navigation/menu';
-
-// Pages
-@import 'pages/home';
-@import 'pages/about';

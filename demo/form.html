@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../build/css/styles.min.css">
+  <title>Group button</title>
+</head>
+<body>
+  <div class="container">
+    <h2>Form</h2>
+    <h3>Example form</h3>
+    <form>
+    <label for="name">Name</label>
+    <input class="form-control" type="text" id="name">
+
+    <label for="email">Email address</label>
+    <input class="form-control" type="email" id="email">
+
+    <label>
+      <input type="checkbox"> Remember me
+    </label>
+
+    <label>
+      <input type="radio" id="herp" name="herpderp" checked> Herp
+    </label>
+    <label>
+      <input type="radio" id="derp" name="herpderp"> Derp
+    </label>
+
+    <button class="btn" type="submit">Submit</button>
+  </form>
+
+  <hr>
+  <h3>Form contrast</h3>
+  <form>
+    <input class="form-control" type="text" placeholder="Default input">
+    <input class="form-control form-control--contrast" type="text" placeholder="Input with contrast">
+  </form>
+
+  <hr>
+  <h3>Sizing</h3>
+  <form>
+    <input class="form-control form-control--sm" type="text" placeholder="Small input">
+  </form>
+
+  <form>
+    <input class="form-control form-control--lg" type="text" placeholder="Large input">
+  </form>
+
+  <form>
+    <input class="form-control form-control--block" type="text" placeholder="Full-width input">
+  </form>
+
+
+  <hr>
+  <h2>Form select</h2>
+  <form>
+    <select class="form-select">
+      <option>Choose an option</option>
+      <option>Git</option>
+      <option>Subversion</option>
+      <option>Social Coding</option>
+      <option>Beets</option>
+      <option>Bears</option>
+      <option>Battlestar Galactica</option>
+    </select>
+  </form>
+
+
+  <select class="form-select form-select--sm">
+    <option>Choose an option</option>
+    <option>Git</option>
+    <option>Subversion</option>
+    <option>Social Coding</option>
+    <option>Beets</option>
+    <option>Bears</option>
+    <option>Battlestar Galactica</option>
+  </select>
+
+  <select class="form-select select--sm">
+    <option>Choose an option</option>
+    <option>Git</option>
+    <option>Subversion</option>
+    <option>Social Coding</option>
+    <option>Beets</option>
+    <option>Bears</option>
+    <option>Battlestar Galactica</option>
+  </select>
+
+  <hr>
+  <h2>Form group</h2>
+  <form>
+    <dl class="form-group">
+      <dt><label>Example Text</label></dt>
+      <dd><input class="form-control" type="text" placeholder="Example value"></dd>
+    </dl>
+
+    <dl class="form-group">
+      <dt><label>Example Select</label></dt>
+      <dd>
+        <select class="form-select">
+          <option>Choose an option</option>
+          <option>Git</option>
+          <option>Subversion</option>
+          <option>Social Coding</option>
+          <option>Beets</option>
+          <option>Bears</option>
+          <option>Battlestar Galactica</option>
+        </select>
+      </dd>
+    </dl>
+
+    <dl class="form-group">
+      <dt><label>Example Textarea</label></dt>
+      <dd>
+        <textarea class="form-control"></textarea>
+      </dd>
+    </dl>
+  </form>
+
+  <hr>
+  <h2>Form group validation</h2>
+
+  <dl class="form-group errored">
+    <dt><label>Example Text</label></dt>
+    <dd><input class="form-control" type="text" value="Example Value"></dd>
+    <dd class="error">This example input has an error.</dd>
+  </dl>
+  <br>
+  <dl class="form-group warn">
+    <dt><label>Example Text</label></dt>
+    <dd><input class="form-control" type="text" value="Example Value"></dd>
+    <dd class="warning">This example input has a warning.</dd>
+  </dl>
+  </form>
+  Form actions
+
+  <div class="form-actions">
+    <button type="button" class="btn btn--primary">Save changes</button>
+    <button type="button" class="btn">Cancel</button>
+  </div>
+
+  </div>
+</body>
+</html>
